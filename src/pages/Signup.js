@@ -12,7 +12,7 @@ const Signup = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://housefullbackend.onrender.com/api/users/signup',
+            const response = await axios.post('https://housefullbackend.onrender.com/api/users/signup',
                  { name, email, password });
             if (response.data) {
                 alert("User registered successfully! Please login.");

@@ -42,7 +42,7 @@ const Checkout = () => {
    
 
             // 2. Create Order on Backend
-            const response = await axios.post('http://housefullbackend.onrender.com/api/payment/order', {
+            const response = await axios.post('https://housefullbackend.onrender.com/api/payment/order', {
                 amount: totalAmount 
             });
 
@@ -55,7 +55,7 @@ const Checkout = () => {
 
             // 3. Razorpay Options Configuration
             const options = {
-                key: process.env.REACT_APP_RAZORPAY_KEY_ID || "rzp_test_SAbK0Xh4pmhcHc", // Fallback key if env fails
+                key: process.env.REACT_APP_RAZORPAY_KEY_ID, 
                 amount: order.amount,
                 currency: "INR",
                 name: "HouseFull",
@@ -66,7 +66,7 @@ const Checkout = () => {
                         console.log("Verifying Payment & Sending Email to:", userEmail);
                         
                         // 4. Send data to Backend for Verification and Email Triggering
-                        const verifyRes = await axios.post('http://housefullbackend.onrender.com/api/payment/verify', {
+                        const verifyRes = await axios.post('https://housefullbackend.onrender.com/api/payment/verify', {
                             razorpay_order_id: paymentResponse.razorpay_order_id,
                             razorpay_payment_id: paymentResponse.razorpay_payment_id,
                             razorpay_signature: paymentResponse.razorpay_signature,

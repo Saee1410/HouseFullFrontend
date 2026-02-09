@@ -24,7 +24,7 @@ function MovieDetails() {
        
         // 2. Backend Data (Theater info) - Yala veglya try-catch madhe theva
         try {
-          const dbRes = await axios.get(`http://housefullbackend.onrender.com/api/movies/details/${id}`);
+          const dbRes = await axios.get(`https://housefullbackend.onrender.com/api/movies/details/${id}`);
           setDbMovie(dbRes.data);
         } catch (dbErr) {
           console.log("Database entry not found, showing only TMDB info.");

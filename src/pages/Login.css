@@ -64,7 +64,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 15px;
-    box-sizing: border-box; /* Padding baher janar nahi */
+    box-sizing: border-box; 
     transition: 0.3s ease;
 }
 

@@ -1,23 +1,13 @@
-/* Container - Clean White/Light Grey background */
 
-/* .content-area {
-    padding: 60px 8%;
-    background-color: #f5f7fa; /* Light, clean background 
-    min-height: 100vh;
-    color: #333; /* Dark text for readability 
-} */
-
-/* Jar purn website la image pahije asel tar 'body' vapra, 
-   naitar fakt ya section purte '.content-area' vapra */
 .content-area {
     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-                      url('https://your-image-url.jpg'); /* Ithe image link taka */
+                      url('https://your-image-url.jpg'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Scroll hotana image halnar nahi */
+    background-attachment: fixed;
     background-repeat: no-repeat;
     
-    /* Bakichi settings */
+    
     padding: 60px 8%;
     min-height: 100vh;
     color: #333;
@@ -80,7 +70,7 @@
 /* Saglyat mahatvache: Link tag chi underline kadhnyasathi */
 .movie-card a {
     text-decoration: none !important;
-    color: inherit; /* Title cha color dark rahil */
+    color: inherit; 
     font-size: medium;
 }
 

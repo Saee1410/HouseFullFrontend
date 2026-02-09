@@ -29,7 +29,7 @@ function Home({ searchQuery }) {
 
         // 2. HA DATA BACKEND LA SAVE KARAYLA PATHVNE
         if (tmdbMovies.length > 0) {
-            await axios.post("http://housefullbackend.onrender.com/api/movies/sync-from-frontend", {
+            await axios.post("https://housefullbackend.onrender.com/api/movies/sync-from-frontend", {
                 movies: tmdbMovies
             });
             console.log("Database updated with TMDB movies!");

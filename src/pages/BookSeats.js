@@ -75,7 +75,7 @@ const BookSeats = () => {
     const fetchShow = async () => {
       if (!id || id === 'undefined') return;
       try {
-        const url = `http://housefullbackend.onrender.com/api/movies/get-show/${id}/${encodeURIComponent(time)}`;
+        const url = `https://housefullbackend.onrender.com/api/movies/get-show/${id}/${encodeURIComponent(time)}`;
         const res = await axios.get(url);
         setDbShow(res.data);
       } catch (err) {
@@ -92,7 +92,7 @@ const BookSeats = () => {
     const fetchMovieTitle = async () => {
       if (!id || id === 'undefined') return;
       try {
-        const movieRes = await axios.get(`http://housefullbackend.onrender.com/api/movies/details/${id}`);
+        const movieRes = await axios.get(`https://housefullbackend.onrender.com/api/movies/details/${id}`);
         setMovieTitle(movieRes.data?.title || '');
       } catch (err) {
         console.warn("Movie title fetch failed.");
@@ -120,7 +120,7 @@ const BookSeats = () => {
     if (!dbShow?._id) return alert("Show info missing!");
     setBookingLoading(true);
 
-    const response = await axios.post('http://housefullbackend.onrender.com/api/movies/confirm-booking', {
+    const response = await axios.post('https://housefullbackend.onrender.com/api/movies/confirm-booking', {
       showId: dbShow._id,
       selectedSeats: selectedSeats,
     });
@@ -144,7 +144,7 @@ const BookSeats = () => {
           selectedSnacks: selectedSnacks.map(snack => ({
             name: snack.name,
             size: selectedSizes[snack.id] || "Standard",
-            price: snack.price + (selectedSizes[snack.id] === "XXL" ? 100: 0)
+            price: getSnackPrice(snack)
           })),
         
           showId: dbShow._id,

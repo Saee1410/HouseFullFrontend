@@ -56,8 +56,8 @@
 .btn-group {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center madhe pahije asel tar */
-    gap: 15px;               /* Donhi button madhla antar */
+    justify-content: center; 
+    gap: 15px;               
     width: 100%;
     margin-top: 15px;
     padding: 0 10px;
@@ -65,7 +65,7 @@
 
 /* Watch Button (Tujha pahila code) */
 .watch-btn {
-    flex: 1;                 /* Donhi buttons saman width che hotil */
+    flex: 1;                
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,20 +80,19 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
-    white-space: nowrap;     /* Text ekach line madhe rahil */
+    white-space: nowrap;    
 }
 
-/* Book Button (Adjusted for Row) */
+
 .book-btn {
-    flex: 1;                 /* Donhi buttons saman width che hotil */
+    flex: 1;                
     background-color: #f84464;
     color: white;
     border: none;
     padding: 12px 15px;
     font-size: 14px;
     font-weight: bold;
-    cursor: pointer;
-    border-radius: 50px;      /* Pill shape kela matching sathi */
+    cursor: pointer; 
     transition: background 0.3s;
     box-shadow: 0 4px 15px rgba(248, 68, 100, 0.3);
 }

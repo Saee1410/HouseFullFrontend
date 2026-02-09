@@ -13,7 +13,7 @@ const ShowList = ({searchQuery }) => {
     useEffect(() => {
         const fetchShows = async () => {
             try {
-                const res = await axios.get('http://housefullbackend.onrender.com/api/admin/get-shows');
+                const res = await axios.get('https://housefullbackend.onrender.com/api/admin/get-shows');
                 setAllShows(res.data);
             } catch (error) {
                 console.error("Data fetching error:", error);
@@ -24,7 +24,7 @@ const ShowList = ({searchQuery }) => {
 
     const handlePayment = async (show) => {
         try {
-            const { data  } = await axios.post('http://housefullbackend.onrender.com/api/payment/order', {
+            const { data  } = await axios.post('https://housefullbackend.onrender.com/api/payment/order', {
                 amount: show.price,
                 showId: show._id
         });

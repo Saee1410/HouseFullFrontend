@@ -12,7 +12,7 @@ const AdminDashboard = () => {
 
     const fetchShows = async () => {
         try {
-            const res = await axios.get('http://housefullbackend.onrender.com/api/admin/get-shows');
+            const res = await axios.get('https://housefullbackend.onrender.com/api/admin/get-shows');
             setShows(res.data);
         }catch (error) {
             console.error('Error fetching shows:', error);
@@ -32,10 +32,10 @@ const AdminDashboard = () => {
         e.preventDefault();
         try {
             if (editingId) {
-                await axios.put(`http://housefullbackend.onrender.com/api/admin/update-show/${editingId}`, formData);
+                await axios.put(`https://housefullbackend.onrender.com/api/admin/update-show/${editingId}`, formData);
                 alert('Show updated successfully!');
             }else {
-                await axios.post('http://housefullbackend.onrender.com/api/admin/add-show', formData);
+                await axios.post('https://housefullbackend.onrender.com/api/admin/add-show', formData);
                 alert('Show added successfully!');
             }
             setEditingId(null);
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
    const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete?")) return;
 
-    const url = `http://housefullbackend.onrender.com/api/admin/delete-show/${id}`;
+    const url = `https://housefullbackend.onrender.com/api/admin/delete-show/${id}`;
     console.log("Calling URL:", url); // He console madhe check kar 
 
     try {
