@@ -419,3 +419,82 @@
   text-align: center;
   margin-top: 50px;
 }
+
+/* --- Mobile Responsive for Booking & Snacks --- */
+
+@media (max-width: 768px) {
+  /* 1. Seats Grid Adjustment */
+  .grid-layout {
+    grid-template-columns: repeat(10, 1fr); /* 10 columns thik aahet pan gap kami karu */
+    gap: 6px; 
+    padding: 10px;
+    max-width: 95%; /* Screen chya width nusar */
+  }
+
+  .seat {
+    width: 24px; /* Seats thodya lahan kelya mobile sathi */
+    height: 22px;
+    font-size: 8px;
+    border-radius: 4px;
+  }
+
+  /* 2. Cinema Screen */
+  .cinema-screen {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  /* 3. Legend (Seat types info) */
+  .legend {
+    gap: 15px;
+    padding: 10px 15px;
+    font-size: 11px;
+    flex-wrap: wrap; /* Mobile var don lines madhe yeil */
+  }
+
+  /* 4. Snacks Modal */
+  .snacks-modal {
+    width: 95%; /* Modal screen chya baher janar nahi */
+    padding: 15px;
+    max-height: 90vh; /* Khup motha modal asel tar scroll hoil */
+    overflow-y: auto;
+  }
+
+  .snack-card {
+    padding: 10px;
+  }
+
+  .snack-icon {
+    font-size: 1.8rem;
+    padding: 5px;
+  }
+
+  .snack-info h4 {
+    font-size: 1rem;
+  }
+
+  /* 5. Buttons */
+  .confirm-btn-large, .final-pay-btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Agdi lahan mobile sathi (zase iPhone SE) */
+@media (max-width: 380px) {
+  .grid-layout {
+    gap: 4px;
+  }
+  .seat {
+    width: 20px;
+    height: 18px;
+  }
+  .legend {
+    font-size: 10px;
+    gap: 10px;
+  }
+}

@@ -99,3 +99,44 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+/* --- Mobile Responsive for Signup Card --- */
+
+@media (max-width: 480px) {
+    .login-container {
+        align-items: flex-start; /* Mobile var keyboard ughadlyavar card varti pahije */
+        padding-top: 40px;
+        background-color: #ffffff; /* Mobile var purna white background professional disto */
+    }
+
+    .login-card {
+        max-width: 90%; /* Side ne thodi spacing sodli */
+        padding: 1.5rem;
+        box-shadow: none; /* Mobile var shadow kadhun takli tar look clean hoto */
+        border: none;
+    }
+
+    .login-card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+    }
+
+    .input-group input {
+        padding: 14px; /* Touch target motha kela typing sathi */
+        font-size: 16px; /* 16px font mule iPhone/Android var auto-zoom hot nahi */
+    }
+
+    .login-btn {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .footer-text {
+        margin-top: 25px;
+        font-size: 13px;
+    }
+}

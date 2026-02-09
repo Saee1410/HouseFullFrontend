@@ -204,8 +204,101 @@
 }
 
 /* Mobile Friendly */
-@media (max-width: 950px) {
+/* @media (max-width: 950px) {
   .main-content { grid-template-columns: 1fr; }
   .details-info-section { padding-top: 20px; }
   .main-poster { width: 250px; margin: 0 auto; }
+} */
+
+/* --- Mobile Responsive for Movie Details Page --- */
+
+@media (max-width: 768px) {
+    /* 1. Hero Section Height adjustment */
+    .hero-section {
+        height: 300px; /* Mobile var banner thoda lahan kela */
+    }
+
+    .hero-title {
+        font-size: 1.8rem; /* Titla motha aslyas mobile var baher jato */
+        padding: 0 5% 150px;
+        text-align: center;
+    }
+
+    .hero-content {
+        transform: translateY(-110px); /* Poster varti gelyamule meta info adjust keli */
+        padding: 0 5%;
+        align-items: center;
+    }
+
+    .hero-meta {
+        font-size: 13px;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    /* 2. Main Content & Poster Overlap */
+    .main-content {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 0 15px 40px;
+        margin: -80px auto 0; /* Poster thoda kami overlap kela */
+        gap: 20px;
+    }
+
+    .main-poster {
+        width: 180px; /* Mobile var poster chi size lahan pahije */
+        margin: 0 auto;
+        border-width: 3px;
+        border-radius: 12px;
+    }
+
+    /* 3. Text & Info Section */
+    .details-info-section {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .section-label {
+        font-size: 1.2rem;
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    .overview-card {
+        padding: 20px;
+        text-align: left; /* Description left aligned bari diste */
+    }
+
+    .overview-text {
+        font-size: 0.95rem;
+    }
+
+    /* 4. Booking Time Grid */
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mobile var 2 times eka line madhe */
+        gap: 10px;
+    }
+
+    .time-card {
+        padding: 15px 10px;
+    }
+
+    .time-val {
+        font-size: 1.1rem;
+    }
+
+    .genre-pill {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+}
+
+/* Agdi lahan screen sathi (e.g. iPhone SE) */
+@media (max-width: 400px) {
+    .time-grid {
+        grid-template-columns: 1fr; /* Ekach line madhe ek show time */
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
 }

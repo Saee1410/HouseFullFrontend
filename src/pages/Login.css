@@ -144,3 +144,39 @@
   font-family: 'Roboto', sans-serif;
   color: #3c4043;
 }
+
+/* --- Mobile Responsive for Login/Signup --- */
+
+@media (max-width: 480px) {
+    .bms-wrapper {
+        align-items: flex-start; /* Mobile var card thoda varti aslela bara disto */
+        padding-top: 50px;
+        background-color: #ffffff; /* Mobile var full white background clean disto */
+    }
+
+    .bms-card {
+        max-width: 90%; /* Screen chya donhi baajula 5-5% jaga sutel */
+        padding: 20px; /* Aatli gardi kami keli */
+        box-shadow: none; /* Mobile var shadow peksha clean border bari diste */
+        border: none;
+    }
+
+    .bms-header h2 {
+        font-size: 22px;
+    }
+
+    .bms-input-group input {
+        padding: 14px; /* Mobile var typing sathi input thoda motha pahije */
+        font-size: 16px; /* Zoom prevent karnyathi 16px best aahe */
+    }
+
+    .bms-btn {
+        padding: 16px; /* Button dabayla soppa hoto */
+        font-size: 16px;
+    }
+
+    .google-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

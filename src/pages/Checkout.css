@@ -65,3 +65,47 @@
     margin-top: 10px;
     cursor: pointer;
 }
+
+/* --- Mobile Responsive for Checkout Page --- */
+
+@media (max-width: 600px) {
+    .checkout-container {
+        padding: 15px; /* Side spacing kami kelyamule card motha disto */
+        min-height: auto;
+        margin-top: 50px;
+    }
+
+    .ticket-card {
+        padding: 20px; /* Card chya aatli jaga kami keli */
+        border-radius: 10px;
+        max-width: 95%; /* Screen nusar width adjust hoil */
+    }
+
+    .checkout-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .summary-details .detail-item {
+        font-size: 1rem; /* Text thoda lahan kela */
+        margin-bottom: 12px;
+    }
+
+    .total-item {
+        font-size: 1.2rem;
+        margin-top: 15px;
+        border-top: 1px dashed #444; /* Amount chya var ek separator line */
+        padding-top: 15px;
+    }
+
+    .pay-btn {
+        padding: 12px;
+        font-size: 1.1rem;
+        border-radius: 6px;
+    }
+
+    .cancel-btn {
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+    }
+}

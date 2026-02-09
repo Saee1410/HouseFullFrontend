@@ -117,3 +117,47 @@
         padding: 10px 5px;
     }
 }
+
+@media (max-width: 768px) {
+    .shows-container {
+        padding: 15px; /* Mobile var baajula kami jaga sodli ki posters mothi distat */
+    }
+
+    .shows-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Mobile var ekach row madhe 2 movies basu shaktat */
+        gap: 15px; /* Cards madhla antar kami kela */
+    }
+
+    .poster-img {
+        height: 180px; /* Mobile screen sathi height thodi kami kelyas look bara disto */
+    }
+
+    .show-title {
+        font-size: 16px; /* Titla thoda lahan kela */
+    }
+
+    .show-details {
+        padding: 10px;
+    }
+
+    /* Buttons mobile var ekamekaanchya khali karnyacha paryay (garaj aslyas) */
+    /* Jar tula buttons eka khali ek pahije astil tar flex-direction column kara */
+    .btn-group {
+        flex-direction: row; /* Donhi buttons baajula baajula basu shaktat */
+        gap: 5px;
+        padding: 0 5px;
+    }
+
+    .watch-btn, .book-btn {
+        font-size: 11px; /* Button text thoda lahan kela */
+        padding: 10px 4px;
+        border-radius: 8px; /* Mobile var sharp edges bare distat */
+    }
+}
+
+/* Agdi lahan mobile sathi (zase iPhone SE) */
+@media (max-width: 380px) {
+    .shows-grid {
+        grid-template-columns: 1fr; /* Khup lahan screen var ekach card dakhva */
+    }
+}
