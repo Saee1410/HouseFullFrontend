@@ -1,0 +1,212 @@
+/* Container */
+.movie-details-wrapper {
+  background-color: #f8faff;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #2d3436;
+}
+
+/*Background Image styling - Ekdam clear disel*/
+ .hero-section {
+  height: 480px;
+  background-size: cover;
+  background-position: center 20%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.hero-content-title {
+  padding: 0 8% 120px; /* Poster overlap sathi space sodli */
+  z-index: 2;
+}
+
+.hero-title {
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-weight: 900;
+  padding: 0 8% 220px; 
+  z-index: 2;
+  text-transform: uppercase;
+  text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+
+
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #141414 10%, rgba(0,0,0,0) 60%);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  background: linear-gradient(to top, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0)); 
+  pointer-events: none; /* He khup mahatvache aahe! */
+}
+
+.movie-main-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+
+/* Layout Grid */
+.main-content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  padding: 0 8% 60px;
+  max-width: 1400px;
+  margin: -100px auto 0; /* Poster varti overlap kela */
+  position: relative;
+  z-index: 5;
+}
+
+/* Poster */
+.main-poster {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border: 5px solid white;
+}
+
+/* Info Section */
+.details-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 110px; /* Hero title pasun gap */
+}
+
+/* Meta Bar - Clear visibility on white background */
+/* Hero Content Wrapper sathi */
+.hero-content-title, .hero-content {
+  padding: 0 8% 0; /* Khali padding chi garaj nahi */
+  z-index: 2;
+  width: 100%;
+  
+  /* Yene akkha title ani meta section varti sarakto */
+  transform: translateY(-160px); 
+  
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Title ani Meta madhla antar */
+}
+
+
+
+/* Hero Meta styling jyamule te varti gelyavar nit disel */
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #ffffff; /* White color dila karan te aata background image var aahe */
+  font-weight: 600;
+  text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rating-tag {
+  background: #ffc107;
+  color: #000;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.theater-tag {
+  color: #ffffff;
+  background: rgba(248, 68, 100, 0.8); /* Light red semi-transparent background */
+  padding: 3px 12px;
+  border-radius: 6px;
+}
+
+/* Overview Card */
+.overview-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.section-label {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-top: 95px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.overview-text {
+  color: #4a4a4a;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: auto;
+}
+
+.genre-pill {
+  display: inline-block;
+  background: #fdf0f2;
+  color: #F84464;
+  padding: 6px 15px;
+  border-radius: 50px;
+  margin-right: 10px;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Booking Section */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.time-card {
+  background: white;
+  border: 2px solid #f1f2f6;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.time-card:hover {
+  border-color: #F84464;
+  transform: translateY(-5px);
+}
+
+.time-val {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.book-btn-small {
+  background: #F84464;
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* Mobile Friendly */
+@media (max-width: 950px) {
+  .main-content { grid-template-columns: 1fr; }
+  .details-info-section { padding-top: 20px; }
+  .main-poster { width: 250px; margin: 0 auto; }
+}

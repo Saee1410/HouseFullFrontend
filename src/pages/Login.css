@@ -1,0 +1,146 @@
+/* 1. Background Wrapper - Screen chya madhomadh aanne */
+.bms-wrapper {
+    background-color: #f2f2f2; /* Light grey background */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 2. Login Card Styling */
+.bms-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px; /* Card chi rundaai */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* 3. Header Styling */
+.bms-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bms-header h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #333;
+    font-weight: 700;
+}
+
+.bms-header p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* 4. Form and Input Styling */
+.bms-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.bms-input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.bms-input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.bms-input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box; /* Padding baher janar nahi */
+    transition: 0.3s ease;
+}
+
+.bms-input-group input:focus {
+    outline: none;
+    border-color: #f84464; /* BMS Pink color */
+    box-shadow: 0 0 5px rgba(248, 68, 100, 0.2);
+}
+
+/* 5. Button Styling */
+.bms-btn {
+    background-color: #f84464; /* Brand Pink */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.bms-btn:hover {
+    background-color: #e03a58;
+}
+
+/* 6. Footer Styling */
+.bms-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
+
+.bms-footer a {
+    color: #f84464;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bms-footer a:hover {
+    text-decoration: underline;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #757575;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 100%; /* Garje nusar badla */
+  margin-top: 15px;
+}
+
+.google-btn:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  border-color: #d2e3fc;
+}
+
+.google-logo {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+/* Jar tula text dark pahije asel tar */
+.google-btn span {
+  font-family: 'Roboto', sans-serif;
+  color: #3c4043;
+}

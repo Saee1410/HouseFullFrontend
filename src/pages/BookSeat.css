@@ -1,0 +1,421 @@
+.booking-container {
+  background: #f8f9fa; /* Light greyish white */
+  min-height: 100vh;
+  padding: 40px 20px 100px; /* Bottom padding footer sathi */
+  color: #2d3436; /* Dark text for readability */
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.screen-info h2 {
+  margin-bottom: 5px;
+  color: #1a1a1a;
+  font-weight: 800;
+}
+
+.sub-text {
+  color: #636e72;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Screen Styling - White theme madhe Blue light ekdam premium diste */
+.cinema-screen {
+  margin: 40px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.screen-curve {
+  height: 6px;
+  background: #00d2ff;
+  border-radius: 50%;
+  box-shadow: 0 12px 25px rgba(0, 210, 255, 0.3);
+  margin-bottom: 10px;
+}
+
+.screen-label {
+  font-size: 12px;
+  color: #b2bec3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Grid Layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 12px;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white; /* Seats cha card white */
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Light shadow sathi */
+}
+
+/* Seat Styling - White Theme Colors */
+.seat {
+  width: 32px;
+  height: 30px;
+  background: #f1f2f6; /* Default seat color */
+  border: 1px solid #dfe6e9;
+  border-radius: 6px 6px 2px 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #636e72;
+}
+
+.seat:hover:not(.occupied) {
+  background: #dfe6e9;
+  transform: scale(1.1);
+  border-color: #b2bec3;
+}
+
+.seat.selected {
+  background: #F84464 !important; /* Premium Red */
+  border-color: #d13550;
+  box-shadow: 0 5px 15px rgba(248, 68, 100, 0.3);
+  color: white;
+}
+
+.seat.occupied {
+  background: #e2e8f0 !important;
+  border-color: #cbd5e1;
+  cursor: not-allowed;
+  color: transparent; /* Number hide kela */
+  opacity: 0.6;
+}
+
+/* Legend Styling */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #636e72;
+  background: white;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.legend .item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-summary-card {
+  max-width: 480px;
+  margin: 30px auto; /* Center la dakhvnya sathi */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  border: 1px solid #f1f3f5;
+  transition: transform 0.3s ease;
+}
+
+/* Hover kelyavar thoda varti yeil */
+.booking-summary-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-details {
+  margin-bottom: 25px;
+  border-bottom: 2px dashed #edf2f7; /* Ticket sarkha feel denyasathi dashed line */
+  padding-bottom: 20px;
+}
+
+.summary-text {
+  color: #718096;
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.summary-text span {
+  color: #F84464; /* Red color for seat numbers */
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.total-amount {
+  color: #1a202c;
+  font-size: 28px;
+  font-weight: 900;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Confirm Button - Full Width & Premium Red */
+.confirm-btn-large {
+  width: 100%;
+  background: linear-gradient(135deg, #F84464 0%, #d13550 100%);
+  color: white;
+  border: none;
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(248, 68, 100, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.confirm-btn-large:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d13550 0%, #b22d44 100%);
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(248, 68, 100, 0.4);
+}
+
+/* Button Loading/Disabled state */
+.confirm-btn-large:disabled {
+  background: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 550px) {
+  .booking-summary-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 18px;
+  }
+  
+  .total-amount {
+    font-size: 24px;
+  }
+}
+
+/* --- SNACKS MODAL STYLES --- */
+
+/* 1. Modal cha bahercha black parda */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(220, 206, 206);/* Darker overlay for focus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Saglya var disava mhnun */
+  backdrop-filter: blur(5px); /* Premium look sathi blur effect */
+}
+
+/* 2. Main Modal Box */
+.snacks-modal {
+  background: #121212;
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 20px;
+  color: white;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-out; /* Pop-up animation */
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 3. Header Styling */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
+}
+
+.close-x {
+  background: #333;
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-x:hover { background: #ff4d4d; }
+
+/* 4. Snack Cards Styling */
+.snacks-list {
+  max-height: 350px;
+  overflow-y: auto; /* List mothi zali tar scroll honyasathi */
+  padding-right: 5px;
+}
+
+.snack-card {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.snack-card:hover { background: #282828; }
+
+.snack-card.active {
+  border-color: #ff9800;
+  background: #2d2418;
+}
+
+.snack-icon {
+  font-size: 2.2rem;
+  background: #262626;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.snack-info {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.snack-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+}
+
+.snack-info p {
+  margin: 0;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+/* 5. Add Button inside Card */
+.snack-add-btn {
+  background: #333;
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.snack-card.active .snack-add-btn {
+  background: #ff9800;
+  color: #000;
+}
+
+/* 6. Footer & Payment Button */
+.modal-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #333;
+}
+
+.modal-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.final-pay-btn {
+  width: 100%;
+  background: white;
+  color: black;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.final-pay-btn:hover {
+  background: #e68a00;
+  transform: translateY(-2px);
+}
+
+.final-pay-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+.skip-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 5px;
+}
+
+.skip-btn:hover {
+  color: white;
+}
+
+.size-selector {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.size-btn {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.size-btn.active {
+  background: #ff9800;
+  color: white;
+  border-color: #ff9800;
+}
+
+.loading-text {
+  color: #333;
+  text-align: center;
+  margin-top: 50px;
+}

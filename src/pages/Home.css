@@ -1,0 +1,138 @@
+/* Container - Clean White/Light Grey background */
+
+/* .content-area {
+    padding: 60px 8%;
+    background-color: #f5f7fa; /* Light, clean background 
+    min-height: 100vh;
+    color: #333; /* Dark text for readability 
+} */
+
+/* Jar purn website la image pahije asel tar 'body' vapra, 
+   naitar fakt ya section purte '.content-area' vapra */
+.content-area {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                      url('https://your-image-url.jpg'); /* Ithe image link taka */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Scroll hotana image halnar nahi */
+    background-repeat: no-repeat;
+    
+    /* Bakichi settings */
+    padding: 60px 8%;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Section Title - Bold & Professional */
+.title {
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #222;
+    border-left: 6px solid #F84464; /* BMS Signature Pink */
+    padding-left: 20px;
+    text-transform: capitalize;
+}
+
+/* Movie Grid */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Movie Card - White with Soft Shadow */
+.movie-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #eee; /* Faint border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover Effect - Card Lift & Primary Glow */
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #F84464;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card Information */
+.card-info {
+    padding: 15px;
+    background: #ffffff;
+}
+
+/* Saglyat mahatvache: Link tag chi underline kadhnyasathi */
+.movie-card a {
+    text-decoration: none !important;
+    color: inherit; /* Title cha color dark rahil */
+    font-size: medium;
+}
+
+.movie-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none !important;
+}
+
+/* Rating Badge - Bright & Clear */
+.movie-card p {
+    font-size: 14px;
+    color: #444;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none !important;
+  
+}
+
+.movie-card p::before {
+    content: "⭐";
+    color: #ffc107;
+    margin-right: 2px;
+   
+}
+
+/* Loading State for White Theme */
+.loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fa;
+    color: #F84464;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .movie-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .movie-card img {
+        height: 220px;
+    }
+}

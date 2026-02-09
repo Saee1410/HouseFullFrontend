@@ -1,0 +1,82 @@
+.success-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Tumcha background image ithe pan apply hovu shakto */
+    background: #f5f7fa; 
+}
+
+.success-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.check-container {
+    width: 80px;
+    height: 80px;
+    background: #4BB543; /* Success Green */
+    color: white;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: scaleUp 0.5s ease-out;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.success-card h1 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.message {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.ticket-summary {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.status-badge {
+    color: #4BB543;
+    font-weight: bold;
+}
+
+.home-btn {
+    display: inline-block;
+    background: #F84464; /* BMS Pink */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #d63350;
+    transform: translateY(-2px);
+}
