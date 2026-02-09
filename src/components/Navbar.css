@@ -122,25 +122,36 @@
 
 .login-btn:hover { background: #b20710; }
 
-/* 📱 Mobile sathi Media Query (768px peksha kami screen sathi) */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Items ekamekaanchya khali yetil */
-    padding: 1rem;
+    display: flex;
+    flex-direction: row !important; /* Items la eka line madhe aanle */
+    justify-content: space-between; /* Logo left la ani Search right la */
+    align-items: center;
+    padding: 10px 15px; /* Height kami keli */
+    height: 60px; /* Fixed height dili jyamule to motha disnar nahi */
+    background: #1a1a1a;
+  }
+
+  .nav-logo {
+    width: 120px; /* Logo chi size mobile nusar adjust keli */
+    height: auto;
   }
 
   .nav-links {
-    display: flex;
-    flex-direction: column; /* Links ubhya hotil */
-    width: 100%;
-    text-align: center;
-    gap: 10px;
-    margin-top: 10px;
+    display: none; /* Mobile var menu items lapvun dila (garaj aslyas dakhvu) */
   }
 
-  .nav-links li {
-    list-style: none;
-    padding: 8px 0;
-    border-bottom: 1px solid #333; /* Olkhnyasathi thodi line */
+  /* Search Icon styling */
+  .search-container {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    font-size: 1.2rem;
+    color: #888;
+    cursor: pointer;
   }
 }

@@ -123,10 +123,19 @@
         padding: 15px; /* Mobile var baajula kami jaga sodli ki posters mothi distat */
     }
 
+   @media (max-width: 600px) {
     .shows-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Mobile var ekach row madhe 2 movies basu shaktat */
-        gap: 15px; /* Cards madhla antar kami kela */
+        /* 1fr mule eka row madhe ekach card basel */
+        grid-template-columns: 1fr; 
+        gap: 20px; /* Don posters madhe thoda vyavस्थित antar rahil */
+        padding: 10px;
     }
+
+    .show-card {
+        max-width: 320px; /* Poster khupach motha nako vatta mhanun center la aanu */
+        margin: 0 auto; 
+    }
+}
 
     .poster-img {
         height: 180px; /* Mobile screen sathi height thodi kami kelyas look bara disto */
@@ -140,8 +149,7 @@
         padding: 10px;
     }
 
-    /* Buttons mobile var ekamekaanchya khali karnyacha paryay (garaj aslyas) */
-    /* Jar tula buttons eka khali ek pahije astil tar flex-direction column kara */
+    
     .btn-group {
         flex-direction: row; /* Donhi buttons baajula baajula basu shaktat */
         gap: 5px;
