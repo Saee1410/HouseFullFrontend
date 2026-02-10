@@ -19,7 +19,7 @@
   max-width: 1400px;
 }
 
-/* --- LOGO: Purple kadhun takla --- */
+/* --- LOGO --- */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -37,13 +37,13 @@
 }
 
 .logo-span {
-  color: #e50914 !important; /* FULL color Red */
+  color: #e50914 !important;
   margin-left: 2px;
 }
 
-/* --- SEARCH BAR: Icon Left la --- */
+/* --- SEARCH BAR --- */
 .nav-search-container {
-  flex: 0 1 500px; /* Long Search Bar */
+  flex: 0 1 500px;
   margin: 0 20px;
 }
 
@@ -58,7 +58,6 @@
   left: 15px; 
   color: #888;
   z-index: 5;
-  transition: 0.3s;
 }
 
 .search-input {
@@ -73,36 +72,31 @@
   transition: 0.3s;
 }
 
-/* Focus honyavar Icon ani Border Red honar */
 .search-input:focus {
   border-color: #e50914;
   background: #333;
-  box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
 }
 
-.search-input:focus + .search-bar-icon,
-.search-group:focus-within .search-bar-icon {
-  color: #e50914; /* Icon Red */
-}
-
-/* --- Menu & Buttons --- */
+/* --- RIGHT MENU & BUTTONS --- */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   margin: 0;
+  padding: 0;
+  gap: 15px;
 }
 
 .nav-links {
   color: white !important;
   text-decoration: none;
-  padding: 0 10px;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 .nav-links:hover {
@@ -122,72 +116,72 @@
 
 .login-btn:hover { background: #b20710; }
 
+/* --- MOBILE RESPONSIVE (Fixes for height & overlapping) --- */
 @media (max-width: 768px) {
-  /* 1. Navbar chi height auto kara jyamule items dable janar nahit */
   .navbar {
-    height: auto !important;
+    height: auto !important; /* Fixed height kadhun टाकली */
     padding: 10px 0 !important;
-    min-height: 30px;
   }
 
   .navbar-container {
-    flex-direction: column !important; /* Items ekameka khali yenar */
-    gap: 10px;
-    width: 95%;
+    flex-direction: column !important; /* एका खाली एक मांडणी */
+    gap: 8px;
   }
 
-  /* 2. Top Row: Logo ani Logout/Login button */
-  .nav-top-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 2px;
-  }
-
-  /* Logo size adjust */
+  /* १. लोगो आणि ऑथ बटन एकाच ओळीत */
   .navbar-logo {
     font-size: 1.2rem !important;
-    margin: 0 !important;
   }
 
-  /* 3. Search Bar: Full width madhe middle la */
+  /* तुमच्या JS मधल्या .nav-right ला इकडे फ्लेक्स बॉक्स दिलं */
+  .nav-right {
+    width: 100%;
+    flex-direction: column-reverse; /* बटन वर आणि मेनू खाली */
+    gap: 8px;
+  }
+
+  /* लॉगिन/लॉगआउट ला वर न्यायचे असेल तर हे महत्वाचे */
+  .nav-auth {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+  }
+
+  .login-btn, .logout-btn {
+    padding: 5px 12px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* २. सर्च बार फुल विड्थ */
   .nav-search-container {
     width: 100% !important;
-    max-width: none !important;
     margin: 5px 0 !important;
+    padding: 0 5px;
   }
 
   .search-input {
-    height: 38px !important;
-    font-size: 0.9rem !important;
+    height: 35px !important;
+    font-size: 0.85rem !important;
   }
 
-  /* 4. Nav Menu: Khali Horizontal Scroll madhe */
+  /* ३. मेनू लिंक्स (Chips/Scrollable) */
   .nav-menu {
+    width: 100%;
+    overflow-x: auto; /* आडवा स्क्रोल चालू केला */
     display: flex !important;
-    width: 100% !important;
-    overflow-x: auto; /* Scroll chalu kela */
-    white-space: nowrap;
-    padding: 8px 0 !important;
-    gap: 10px;
-    scrollbar-width: none; /* Hide scrollbar */
+    justify-content: flex-start;
+    padding: 5px 0 !important;
+    scrollbar-width: none; /* स्क्रोलबार लपवला */
   }
 
-  .nav-menu::-webkit-scrollbar {
-    display: none;
-  }
+  .nav-menu::-webkit-scrollbar { display: none; }
 
   .nav-links {
     background: #333;
-    padding: 6px 15px !important;
-    border-radius: 20px;
+    padding: 5px 15px !important;
+    border-radius: 15px;
     font-size: 0.8rem !important;
-    display: inline-block;
-  }
-
-  /* Right side buttons adjustment */
-  .nav-right {
-    width: auto;
+    white-space: nowrap; /* टेक्स्ट तुटणार नाही */
+    border: 1px solid #444;
   }
 }
