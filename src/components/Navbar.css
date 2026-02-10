@@ -127,6 +127,7 @@
   .navbar {
     height: auto !important;
     padding: 10px 0 !important;
+    min-height: 30px;
   }
 
   .navbar-container {
@@ -141,6 +142,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 2px;
   }
 
   /* Logo size adjust */
