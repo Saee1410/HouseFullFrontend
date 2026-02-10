@@ -1,14 +1,14 @@
-/* --- Navbar Base --- */
+/* --- Desktop Base --- */
 .navbar {
-  background: #1a1a1a;
-  height: 80px; /* Desktop height */
+  background: #0f0f0f; /* YouTube Dark Theme */
+  height: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 3px solid #e50914;
+  border-bottom: 1px solid #333;
 }
 
 .navbar-container {
@@ -25,22 +25,23 @@
   align-items: center;
   text-decoration: none !important; 
   color: #ffffff !important; 
-  font-weight: 900;
-  font-size: 1.7rem;
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 .logo-icon {
-  color: #e50914;
-  margin-right: 8px;
+  color: #ff0000; /* YouTube Red */
+  margin-right: 5px;
 }
 
 .logo-span {
-  color: #e50914 !important;
+  color: #ffffff !important;
+  font-weight: 300;
 }
 
 /* --- SEARCH BAR --- */
 .nav-search-container {
-  flex: 0 1 500px;
+  flex: 0 1 600px;
   margin: 0 20px;
 }
 
@@ -58,25 +59,30 @@
 
 .search-input {
   width: 100%;
-  padding: 10px 15px 10px 45px; 
-  border-radius: 25px;
-  border: 1px solid #444;
-  background: #2b2b2b;
+  padding: 8px 15px 8px 45px; 
+  border-radius: 40px;
+  border: 1px solid #333;
+  background: #121212;
   color: white;
   outline: none;
+  font-size: 1rem;
 }
 
-/* --- RIGHT MENU & BUTTONS --- */
+.search-input:focus {
+  border-color: #1c62b9;
+}
+
+/* --- RIGHT MENU --- */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 15px;
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
@@ -84,75 +90,86 @@
 .nav-links {
   color: white !important;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.nav-links:hover {
+  background: #272727;
 }
 
 .login-btn, .logout-btn {
-  background: #e50914;
-  color: white;
+  background: #fff;
+  color: #000;
   border: none;
-  padding: 8px 20px;
+  padding: 7px 15px;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* --- 📱 MOBILE FIX (As per your Screenshots) --- */
+/* --- 📱 MOBILE VIEW (YouTube Style) --- */
 @media (max-width: 768px) {
   .navbar {
-    height: auto !important; /* ही उंची आता कंटेंटनुसार कमी होईल */
-    padding: 10px 0 !important;
+    height: auto !important; /* ऑटो उंची */
+    padding: 8px 0 !important;
   }
 
   .navbar-container {
-    flex-direction: column !important;
-    gap: 12px;
+    flex-direction: column !important; /* ३ ओळींसाठी */
+    gap: 8px !important;
   }
 
-  /* १. लोगो आणि ऑथ बटन एका ओळीत फिक्स */
+  /* ओळ १: Logo आणि Logout */
   .nav-right {
-    position: static; 
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    order: 1;
   }
 
   .nav-auth {
     position: absolute;
-    top: 12px;
+    top: 8px;
     right: 15px;
   }
 
-  .logout-btn, .login-btn {
-    padding: 5px 15px !important;
-    font-size: 0.8rem !important;
-  }
-
-  /* २. सर्च बार स्लिम */
+  /* ओळ २: Search Bar (Full Width) */
   .nav-search-container {
-    width: 95% !important;
+    width: 96% !important;
     margin: 0 !important;
-    order: 2; /* लोगो नंतर सर्च बार येईल */
+    order: 2;
   }
 
   .search-input {
-    height: 38px !important;
+    height: 36px !important;
+    background: #222 !important;
+    border-radius: 8px !important; /* YouTube mobile style */
   }
 
-  /* ३. मेनू लिंक्स (सर्वात महत्वाचे - जे खाली दिसत होते) */
+  /* ओळ ३: Horizontal Scroll Links (Proper YouTube Chips) */
   .nav-menu {
-    order: 3; /* सर्च बारच्या खाली येतील */
+    order: 3;
     width: 100%;
-    justify-content: center; /* सेंटर मध्ये दिसतील */
-    gap: 8px;
+    overflow-x: auto; /* आडवा स्क्रोल */
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 5px 10px !important;
+    gap: 10px;
+    scrollbar-width: none; /* स्क्रोलबार लपवला */
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-links {
-    font-size: 0.8rem !important;
-    padding: 4px 10px !important;
-    background: #2b2b2b; /* डार्क बॅकग्राउंड दिला जेणेकरून ते बटणसारखे वाटतील */
-    border-radius: 5px;
-    border: 1px solid #444;
+    background: #272727; /* Chip background */
+    color: #fff !important;
+    padding: 6px 15px !important;
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap; /* टेक्स्ट एकाच ओळीत ठेवण्यासाठी */
+    border: 1px solid #3f3f3f;
   }
 }
