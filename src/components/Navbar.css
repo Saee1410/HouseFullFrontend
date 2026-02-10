@@ -1,7 +1,7 @@
 /* --- Navbar Base --- */
 .navbar {
   background: #1a1a1a;
-  height: 80px;
+  height: 80px; /* Desktop height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,18 +27,15 @@
   color: #ffffff !important; 
   font-weight: 900;
   font-size: 1.7rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 .logo-icon {
   color: #e50914;
   margin-right: 8px;
-  transform: rotate(-15deg);
 }
 
 .logo-span {
   color: #e50914 !important;
-  margin-left: 2px;
 }
 
 /* --- SEARCH BAR --- */
@@ -57,7 +54,6 @@
   position: absolute;
   left: 15px; 
   color: #888;
-  z-index: 5;
 }
 
 .search-input {
@@ -68,13 +64,6 @@
   background: #2b2b2b;
   color: white;
   outline: none;
-  font-size: 0.9rem;
-  transition: 0.3s;
-}
-
-.search-input:focus {
-  border-color: #e50914;
-  background: #333;
 }
 
 /* --- RIGHT MENU & BUTTONS --- */
@@ -87,20 +76,15 @@
 .nav-menu {
   display: flex;
   list-style: none;
+  gap: 15px;
   margin: 0;
   padding: 0;
-  gap: 15px;
 }
 
 .nav-links {
   color: white !important;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links:hover {
-  color: #e50914 !important;
 }
 
 .login-btn, .logout-btn {
@@ -111,82 +95,64 @@
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.login-btn:hover { background: #b20710; }
-
-/* --- Mobile Fixes (@media) --- */
+/* --- 📱 MOBILE FIX (As per your Screenshots) --- */
 @media (max-width: 768px) {
   .navbar {
-    height: auto !important;
+    height: auto !important; /* ही उंची आता कंटेंटनुसार कमी होईल */
     padding: 10px 0 !important;
   }
 
   .navbar-container {
-    display: flex !important;
-    flex-direction: column !important; /* Items एका खाली एक येतील */
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* १. लोगोला सेंटर मध्ये किंवा वर ठेवण्यासाठी */
-  .navbar-logo {
-    font-size: 1.3rem !important;
-    margin-bottom: 5px;
-  }
-
-  /* २. सर्च बार - मधे व्यवस्थित बसवण्यासाठी */
-  .nav-search-container {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 10px;
-    order: 2; /* सर्च बार दुसऱ्या नंबरला दिसेल */
-  }
-
-  .search-input {
-    height: 38px !important;
-    font-size: 0.9rem !important;
-  }
-
-  /* ३. सर्वात महत्वाचं: Nav Right (Menu + Logout) */
-  .nav-right {
-    display: flex !important;
-    flex-direction: column !important; /* बटन आणि लिंक्स एका खाली एक */
-    width: 100%;
-    align-items: center;
+    flex-direction: column !important;
     gap: 12px;
-    order: 3; /* हे सगळ्यात शेवटी येईल */
   }
 
-  /* लिंक्सला एका आडव्या ओळीत आणण्यासाठी */
-  .nav-menu {
-    display: flex !important;
-    flex-direction: row !important; 
-    justify-content: center;
-    gap: 10px;
+  /* १. लोगो आणि ऑथ बटन एका ओळीत फिक्स */
+  .nav-right {
+    position: static; 
     width: 100%;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .nav-links {
-    font-size: 0.8rem !important;
-    padding: 5px 10px !important;
-    background: #333;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
-
-  /* ४. Logout बटनला एकदम वर (Top Right) न्यायचे असेल तर: */
   .nav-auth {
     position: absolute;
-    top: 15px;
+    top: 12px;
     right: 15px;
   }
 
   .logout-btn, .login-btn {
-    padding: 6px 15px !important;
-    font-size: 0.75rem !important;
-    border-radius: 15px !important;
+    padding: 5px 15px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* २. सर्च बार स्लिम */
+  .nav-search-container {
+    width: 95% !important;
+    margin: 0 !important;
+    order: 2; /* लोगो नंतर सर्च बार येईल */
+  }
+
+  .search-input {
+    height: 38px !important;
+  }
+
+  /* ३. मेनू लिंक्स (सर्वात महत्वाचे - जे खाली दिसत होते) */
+  .nav-menu {
+    order: 3; /* सर्च बारच्या खाली येतील */
+    width: 100%;
+    justify-content: center; /* सेंटर मध्ये दिसतील */
+    gap: 8px;
+  }
+
+  .nav-links {
+    font-size: 0.8rem !important;
+    padding: 4px 10px !important;
+    background: #2b2b2b; /* डार्क बॅकग्राउंड दिला जेणेकरून ते बटणसारखे वाटतील */
+    border-radius: 5px;
+    border: 1px solid #444;
   }
 }
