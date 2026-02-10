@@ -116,72 +116,77 @@
 
 .login-btn:hover { background: #b20710; }
 
-/* --- MOBILE RESPONSIVE (Fixes for height & overlapping) --- */
+/* --- Mobile Fixes (@media) --- */
 @media (max-width: 768px) {
   .navbar {
-    height: auto !important; /* Fixed height kadhun टाकली */
+    height: auto !important;
     padding: 10px 0 !important;
   }
 
   .navbar-container {
-    flex-direction: column !important; /* एका खाली एक मांडणी */
-    gap: 8px;
+    display: flex !important;
+    flex-direction: column !important; /* Items एका खाली एक येतील */
+    align-items: center;
+    gap: 10px;
   }
 
-  /* १. लोगो आणि ऑथ बटन एकाच ओळीत */
+  /* १. लोगोला सेंटर मध्ये किंवा वर ठेवण्यासाठी */
   .navbar-logo {
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 5px;
   }
 
-  /* तुमच्या JS मधल्या .nav-right ला इकडे फ्लेक्स बॉक्स दिलं */
-  .nav-right {
-    width: 100%;
-    flex-direction: column-reverse; /* बटन वर आणि मेनू खाली */
-    gap: 8px;
-  }
-
-  /* लॉगिन/लॉगआउट ला वर न्यायचे असेल तर हे महत्वाचे */
-  .nav-auth {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-  }
-
-  .login-btn, .logout-btn {
-    padding: 5px 12px !important;
-    font-size: 0.75rem !important;
-  }
-
-  /* २. सर्च बार फुल विड्थ */
+  /* २. सर्च बार - मधे व्यवस्थित बसवण्यासाठी */
   .nav-search-container {
     width: 100% !important;
-    margin: 5px 0 !important;
-    padding: 0 5px;
+    margin: 0 !important;
+    padding: 0 10px;
+    order: 2; /* सर्च बार दुसऱ्या नंबरला दिसेल */
   }
 
   .search-input {
-    height: 35px !important;
-    font-size: 0.85rem !important;
+    height: 38px !important;
+    font-size: 0.9rem !important;
   }
 
-  /* ३. मेनू लिंक्स (Chips/Scrollable) */
-  .nav-menu {
-    width: 100%;
-    overflow-x: auto; /* आडवा स्क्रोल चालू केला */
+  /* ३. सर्वात महत्वाचं: Nav Right (Menu + Logout) */
+  .nav-right {
     display: flex !important;
-    justify-content: flex-start;
-    padding: 5px 0 !important;
-    scrollbar-width: none; /* स्क्रोलबार लपवला */
+    flex-direction: column !important; /* बटन आणि लिंक्स एका खाली एक */
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+    order: 3; /* हे सगळ्यात शेवटी येईल */
   }
 
-  .nav-menu::-webkit-scrollbar { display: none; }
+  /* लिंक्सला एका आडव्या ओळीत आणण्यासाठी */
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+  }
 
   .nav-links {
-    background: #333;
-    padding: 5px 15px !important;
-    border-radius: 15px;
     font-size: 0.8rem !important;
-    white-space: nowrap; /* टेक्स्ट तुटणार नाही */
-    border: 1px solid #444;
+    padding: 5px 10px !important;
+    background: #333;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  /* ४. Logout बटनला एकदम वर (Top Right) न्यायचे असेल तर: */
+  .nav-auth {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .logout-btn, .login-btn {
+    padding: 6px 15px !important;
+    font-size: 0.75rem !important;
+    border-radius: 15px !important;
   }
 }
