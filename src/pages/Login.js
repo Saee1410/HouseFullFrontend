@@ -13,7 +13,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://housefullbackend.onrender.com/api/users/login', { email, password });
+            const response = await axios.post('https://housefullbackend.onrender.com/api/auth/login', { email, password });
             if (response.data.token) {
                 localStorage.setItem('token', response.data.token);
 
@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
-        window.open('https://housefullbackend.onrender.com/api/users/google', '_self');
+        window.open('https://housefullbackend.onrender.com/api/auth/google', '_self');
     }
 
     return (
