@@ -175,8 +175,21 @@
     gap: 5px !important;
   }
 
-  .nav-menu {
-    display: none !important; /* Home/Movies links hide kellya barya */
+ .nav-menu {
+    display: flex !important; 
+    order: 3; 
+    width: 100%; 
+    justify-content: flex-start;
+    overflow-x: auto; 
+    padding: 10px 0 5px 0;
+    margin-top: 5px;
+    border-top: 1px solid #333; 
+    scrollbar-width: none; 
+  }
+
+  /* Chrome/Safari साठी Scrollbar लपवला */
+  .nav-menu::-webkit-scrollbar {
+    display: none;
   }
 
   .login-btn, .logout-btn {
@@ -185,4 +198,13 @@
     border-radius: 18px !important;
     white-space: nowrap; /* Text wrap honar nahi */
   }
+
+  .nav-links {
+    font-size: 0.85rem !important;
+    padding: 5px 15px !important;
+    background: #2b2b2b; /* टॅब सारखा लुक */
+    margin-right: 8px;
+    border-radius: 15px;
+  }
+
 }
