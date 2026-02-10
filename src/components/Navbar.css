@@ -1,48 +1,45 @@
-/* --- Desktop Base --- */
+/* --- Desktop & General --- */
 .navbar {
-  background: #0f0f0f; /* YouTube Dark Theme */
-  height: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #0f0f0f;
+  width: 100%;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1100;
   border-bottom: 1px solid #333;
 }
 
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
   max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column; /* मोबाईलसाठी एकाखाली एक */
+  gap: 8px;
 }
 
-/* --- LOGO --- */
+/* --- LOGO & AUTH (Row 1) --- */
 .navbar-logo {
   display: flex;
   align-items: center;
-  text-decoration: none !important; 
-  color: #ffffff !important; 
-  font-weight: bold;
-  font-size: 1.4rem;
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
-.logo-icon {
-  color: #ff0000; /* YouTube Red */
-  margin-right: 5px;
+.logo-icon { color: #e50914; margin-right: 5px; }
+.logo-span { color: #e50914; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo डावीकडे, Logout उजवीकडे */
+  width: 100%;
 }
 
-.logo-span {
-  color: #ffffff !important;
-  font-weight: 300;
-}
-
-/* --- SEARCH BAR --- */
+/* --- SEARCH BAR (Row 2) --- */
 .nav-search-container {
-  flex: 0 1 600px;
-  margin: 0 20px;
+  width: 100%;
 }
 
 .search-group {
@@ -53,140 +50,70 @@
 
 .search-bar-icon {
   position: absolute;
-  left: 15px; 
+  left: 12px;
   color: #888;
+  font-size: 0.9rem;
 }
 
 .search-input {
   width: 100%;
-  padding: 8px 15px 8px 45px; 
-  border-radius: 40px;
+  height: 35px;
+  background: #222;
   border: 1px solid #333;
-  background: #121212;
+  border-radius: 6px;
   color: white;
+  padding-left: 35px;
   outline: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
-.search-input:focus {
-  border-color: #1c62b9;
-}
-
-/* --- RIGHT MENU --- */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
+/* --- NAV LINKS (Row 3 - The YouTube Chips) --- */
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 10px;
   margin: 0;
-  padding: 0;
+  padding: 5px 0;
+  overflow-x: auto; /* आडवा स्क्रोल */
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox साठी स्क्रोलबार लपवला */
 }
+
+.nav-menu::-webkit-scrollbar { display: none; } /* Chrome साठी लपवला */
 
 .nav-links {
+  background: #272727;
   color: white !important;
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 6px 15px;
+  border-radius: 20px; /* Pill shape like YouTube */
+  font-size: 0.85rem;
+  border: 1px solid #3f3f3f;
+  display: inline-block;
 }
 
-.nav-links:hover {
-  background: #272727;
-}
-
-.login-btn, .logout-btn {
-  background: #fff;
-  color: #000;
+/* --- AUTH BUTTON --- */
+.logout-btn, .login-btn {
+  background: #e50914;
+  color: white;
   border: none;
-  padding: 7px 15px;
-  border-radius: 20px;
+  padding: 5px 12px;
+  border-radius: 4px;
   font-weight: bold;
+  font-size: 0.8rem;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  /* 1. सर्वात आधी ही उंची Force करा */
-  .navbar {
-    height: auto !important;
-    min-height: unset !important;
-    max-height: 160px !important; /* ही लिमिट सेट केल्यामुळे उंची मर्यादित राहील */
-    padding: 5px 0 !important;
-    display: block !important; /* Flex ऐवजी Block करा जेणेकरून गॅप कमी होईल */
-  }
-
+/* --- DESKTOP VIEW ADJUSTMENT --- */
+@media (min-width: 769px) {
   .navbar-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 5px !important; /* ओळींमधला स्पेस कमी केला */
-    width: 95%;
-    margin: 0 auto;
+    flex-direction: row; /* आडवं करा */
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
   }
-
-  /* 2. Logo आणि Logout ला एकदम चिटकवून बसवा */
-  .navbar-logo {
-    font-size: 1rem !important;
-    margin-top: 5px !important;
-  }
-
-  .nav-auth {
-    position: absolute !important;
-    top: 5px !important;
-    right: 10px !important;
-  }
-
-  .logout-btn, .login-btn {
-    padding: 4px 10px !important;
-    font-size: 0.7rem !important;
-    height: 28px !important;
-  }
-
-  /* 3. सर्च बारची उंची पण कमी करा */
-  .nav-search-container {
-    width: 100% !important;
-    margin: 2px 0 !important;
-  }
-
-  .search-input {
-    height: 30px !important; /* स्लिम सर्च बार */
-    font-size: 0.8rem !important;
-    padding: 4px 10px 4px 35px !important;
-  }
-
-  .search-bar-icon {
-    font-size: 0.75rem !important;
-    left: 12px !important;
-  }
-
-  /* 4. आडव्या ३ ओळी (Home, Admin, LiveShow) */
-  .nav-right {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100%;
-  }
-
-  .nav-menu {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between; /* ३ ओळीत प्रॉपर गॅप */
-    width: 100%;
-    padding: 5px 0 !important;
-    margin: 0 !important;
-    list-style: none;
-  }
-
-  .nav-links {
-    font-size: 0.75rem !important;
-    padding: 4px 8px !important;
-    background: #222;
-    border-radius: 4px;
-    border: 1px solid #333;
-    flex: 1; /* तिन्ही बटण सारख्या आकाराचे होतील */
-    text-align: center;
-    margin: 0 2px;
-  }
+  
+  .nav-right { width: auto; gap: 20px; }
+  .nav-search-container { flex: 0 1 400px; }
+  .nav-menu { overflow-x: visible; }
 }
