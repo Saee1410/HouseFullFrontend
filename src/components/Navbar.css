@@ -123,88 +123,69 @@
 .login-btn:hover { background: #b20710; }
 
 @media (max-width: 768px) {
-  /* 1. Navbar chi height slim keli (YouTube standard 56px) */
+  /* 1. Navbar chi height auto kara jyamule items dable janar nahit */
   .navbar {
-    height: 56px !important;
-    padding: 0 10px !important;
-    justify-content: center !important; 
+    height: auto !important;
+    padding: 10px 0 !important;
   }
 
   .navbar-container {
-    width: 100%;
+    flex-direction: column !important; /* Items ekameka khali yenar */
+    gap: 10px;
+    width: 95%;
+  }
+
+  /* 2. Top Row: Logo ani Logout/Login button */
+  .nav-top-mobile {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px; /* Items madhla gap */
+    width: 100%;
   }
 
-  /* 2. Logo la chota kela jyamule to jaga khanar nahi */
+  /* Logo size adjust */
   .navbar-logo {
-    font-size: 1.1rem !important;
-    min-width: fit-content;
-    margin-right: 5px;
-  }
-
-  .logo-icon {
-    font-size: 1.2rem;
-    margin-right: 4px;
-  }
-
-  /* 3. Search Bar: YouTube sarkha madhlya jage madhe basavla */
-  .nav-search-container {
-    flex: 1; /* Hi available sagi jaga gheil */
+    font-size: 1.2rem !important;
     margin: 0 !important;
-    max-width: 180px; /* Mobile var width limit keli */
+  }
+
+  /* 3. Search Bar: Full width madhe middle la */
+  .nav-search-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 5px 0 !important;
   }
 
   .search-input {
-    height: 34px;
-    padding: 5px 10px 5px 32px !important; /* Padding kami keli */
-    font-size: 0.8rem !important;
-    border-radius: 20px !important;
-    background: #252525 !important;
+    height: 38px !important;
+    font-size: 0.9rem !important;
   }
 
-  .search-bar-icon {
-    left: 10px !important;
-    font-size: 0.8rem !important;
+  /* 4. Nav Menu: Khali Horizontal Scroll madhe */
+  .nav-menu {
+    display: flex !important;
+    width: 100% !important;
+    overflow-x: auto; /* Scroll chalu kela */
+    white-space: nowrap;
+    padding: 8px 0 !important;
+    gap: 10px;
+    scrollbar-width: none; /* Hide scrollbar */
   }
 
-  /* 4. Right side Buttons (Login/Logout) */
-  .nav-right {
-    gap: 5px !important;
-  }
-
- .nav-menu {
-    display: flex !important; 
-    order: 3; 
-    width: 100%; 
-    justify-content: flex-start;
-    overflow-x: auto; 
-    padding: 10px 0 5px 0;
-    margin-top: 5px;
-    border-top: 1px solid #333; 
-    scrollbar-width: none; 
-  }
-
-  /* Chrome/Safari साठी Scrollbar लपवला */
   .nav-menu::-webkit-scrollbar {
     display: none;
   }
 
-  .login-btn, .logout-btn {
-    padding: 6px 12px !important;
-    font-size: 0.75rem !important;
-    border-radius: 18px !important;
-    white-space: nowrap; /* Text wrap honar nahi */
-  }
-
   .nav-links {
-    font-size: 0.85rem !important;
-    padding: 5px 15px !important;
-    background: #2b2b2b; /* टॅब सारखा लुक */
-    margin-right: 8px;
-    border-radius: 15px;
+    background: #333;
+    padding: 6px 15px !important;
+    border-radius: 20px;
+    font-size: 0.8rem !important;
+    display: inline-block;
   }
 
+  /* Right side buttons adjustment */
+  .nav-right {
+    width: auto;
+  }
 }
