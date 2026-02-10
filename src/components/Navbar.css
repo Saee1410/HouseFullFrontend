@@ -123,35 +123,66 @@
 .login-btn:hover { background: #b20710; }
 
 @media (max-width: 768px) {
+  /* 1. Navbar chi height slim keli (YouTube standard 56px) */
   .navbar {
+    height: 56px !important;
+    padding: 0 10px !important;
+    justify-content: center !important; 
+  }
+
+  .navbar-container {
+    width: 100%;
     display: flex;
-    flex-direction: row !important; /* Items la eka line madhe aanle */
-    justify-content: space-between; /* Logo left la ani Search right la */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 15px; /* Height kami keli */
-    height: 60px; /* Fixed height dili jyamule to motha disnar nahi */
-    background: #1a1a1a;
+    gap: 8px; /* Items madhla gap */
   }
 
-  .nav-logo {
-    width: 120px; /* Logo chi size mobile nusar adjust keli */
-    height: auto;
+  /* 2. Logo la chota kela jyamule to jaga khanar nahi */
+  .navbar-logo {
+    font-size: 1.1rem !important;
+    min-width: fit-content;
+    margin-right: 5px;
   }
 
-  .nav-links {
-    display: none; /* Mobile var menu items lapvun dila (garaj aslyas dakhvu) */
-  }
-
-  /* Search Icon styling */
-  .search-container {
-    margin: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .search-icon {
+  .logo-icon {
     font-size: 1.2rem;
-    color: #888;
-    cursor: pointer;
+    margin-right: 4px;
+  }
+
+  /* 3. Search Bar: YouTube sarkha madhlya jage madhe basavla */
+  .nav-search-container {
+    flex: 1; /* Hi available sagi jaga gheil */
+    margin: 0 !important;
+    max-width: 180px; /* Mobile var width limit keli */
+  }
+
+  .search-input {
+    height: 34px;
+    padding: 5px 10px 5px 32px !important; /* Padding kami keli */
+    font-size: 0.8rem !important;
+    border-radius: 20px !important;
+    background: #252525 !important;
+  }
+
+  .search-bar-icon {
+    left: 10px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* 4. Right side Buttons (Login/Logout) */
+  .nav-right {
+    gap: 5px !important;
+  }
+
+  .nav-menu {
+    display: none !important; /* Home/Movies links hide kellya barya */
+  }
+
+  .login-btn, .logout-btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+    border-radius: 18px !important;
+    white-space: nowrap; /* Text wrap honar nahi */
   }
 }
